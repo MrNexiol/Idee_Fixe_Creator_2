@@ -3,6 +3,7 @@ package tomasz.kopycinski.domain.model
 import java.util.Date
 
 data class CharacterSheet(
+    val id: Int,
     val name: String,
     val surname: String,
     val age: Int,
