@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "Idee Fixe Creator 2"
 include ':app'
 include ':domain'
+include ':data'
