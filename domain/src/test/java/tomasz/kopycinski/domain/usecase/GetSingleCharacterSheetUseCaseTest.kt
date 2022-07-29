@@ -24,6 +24,6 @@ class GetSingleCharacterSheetUseCaseTest {
         val testId = 0
         getSingleCharacterSheetUseCase(testId)
 
-        coVerify(exactly = 1) { repository.getCharacterSheet(testId) }
+        coVerify(exactly = 1) { repository.getCharacterSheetBy(testId) }
     }
 }

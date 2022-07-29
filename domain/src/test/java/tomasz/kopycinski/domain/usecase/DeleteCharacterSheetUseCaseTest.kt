@@ -6,6 +6,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
+import tomasz.kopycinski.domain.model.CharacterSheet
 import tomasz.kopycinski.domain.repository.CharacterSheetRepository
 
 class DeleteCharacterSheetUseCaseTest {
@@ -21,9 +22,9 @@ class DeleteCharacterSheetUseCaseTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun callsRepositoryGetCharacterSheetMethod() = runTest {
-        val testId = 0
-        deleteCharacterSheetUseCase(testId)
+        val testCharacterSheet = mockk<CharacterSheet>()
+        deleteCharacterSheetUseCase(testCharacterSheet)
 
-        coVerify(exactly = 1) { repository.deleteCharacterSheet(testId) }
+        coVerify(exactly = 1) { repository.delete(testCharacterSheet) }
     }
 }

@@ -7,5 +7,5 @@ class SaveCharacterSheetUseCase(
     private val repository: CharacterSheetRepository
 ) {
     suspend operator fun invoke(characterSheet: CharacterSheet) =
-        repository.saveCharacterSheet(characterSheet)
+        repository.save(characterSheet)
 }

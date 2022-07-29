@@ -4,11 +4,11 @@ import kotlinx.coroutines.flow.Flow
 import tomasz.kopycinski.domain.model.CharacterSheet
 
 interface CharacterSheetRepository {
-    suspend fun getCharacterSheet(id: Int): CharacterSheet
+    suspend fun getCharacterSheetBy(id: Int): CharacterSheet
 
-    suspend fun deleteCharacterSheet(characterSheet: CharacterSheet)
+    suspend fun delete(characterSheet: CharacterSheet)
 
-    suspend fun saveCharacterSheet(characterSheet: CharacterSheet)
+    suspend fun save(characterSheet: CharacterSheet)
 
     suspend fun getListOfCharacterSheets(): Flow<List<CharacterSheet>>
 }

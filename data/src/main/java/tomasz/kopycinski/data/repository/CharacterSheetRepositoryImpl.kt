@@ -11,13 +11,13 @@ import tomasz.kopycinski.domain.repository.CharacterSheetRepository
 class CharacterSheetRepositoryImpl(
     private val characterSheetDao: CharacterSheetDao
 ) : CharacterSheetRepository {
-    override suspend fun getCharacterSheet(id: Int): CharacterSheet =
+    override suspend fun getCharacterSheetBy(id: Int): CharacterSheet =
         characterSheetDao.getOneById(id).toDomain()
 
-    override suspend fun deleteCharacterSheet(characterSheet: CharacterSheet) =
+    override suspend fun delete(characterSheet: CharacterSheet) =
         characterSheetDao.delete(characterSheet.toEntity())
 
-    override suspend fun saveCharacterSheet(characterSheet: CharacterSheet) =
+    override suspend fun save(characterSheet: CharacterSheet) =
         characterSheetDao.insert(characterSheet.toEntity())
 
     override suspend fun getListOfCharacterSheets(): Flow<List<CharacterSheet>> =

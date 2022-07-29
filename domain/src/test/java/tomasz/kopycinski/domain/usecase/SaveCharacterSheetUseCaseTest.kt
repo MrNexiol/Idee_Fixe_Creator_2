@@ -25,6 +25,6 @@ class SaveCharacterSheetUseCaseTest {
         val testCharacterSheet = mockk<CharacterSheet>()
         saveCharacterSheetUseCase(testCharacterSheet)
 
-        coVerify(exactly = 1) { repository.saveCharacterSheet(testCharacterSheet) }
+        coVerify(exactly = 1) { repository.save(testCharacterSheet) }
     }
 }
