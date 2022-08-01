@@ -20,11 +20,9 @@ class CharacterSheetListViewModel @Inject constructor(
 
     val characterSheets: StateFlow<List<CharacterSheet>> = _characterSheets.asStateFlow()
 
-    init {
-        viewModelScope.launch {
-            getListOfCharacterSheetsUseCase().collect {
-                _characterSheets.value = it
-            }
+    fun collectCharacterSheets() = viewModelScope.launch {
+        getListOfCharacterSheetsUseCase().collect {
+            _characterSheets.value = it
         }
     }
 }
