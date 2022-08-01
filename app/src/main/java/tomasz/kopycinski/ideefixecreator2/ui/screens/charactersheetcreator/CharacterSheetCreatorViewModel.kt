@@ -1,5 +1,8 @@
 package tomasz.kopycinski.ideefixecreator2.ui.screens.charactersheetcreator
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,11 +17,13 @@ class CharacterSheetCreatorViewModel @Inject constructor(
     private val saveCharacterSheetUseCase: SaveCharacterSheetUseCase
 ) : ViewModel() {
 
-    private val characterSheet =
-        CharacterSheet(0, "Preview", "Character", 21, "Male", Date(), 150, 0, 10000.0, 0.0, 0.0, "")
-
+    var uiState by mutableStateOf(CharacterSheetCreatorUiState())
 
     fun saveCharacterSheet() = viewModelScope.launch {
-        saveCharacterSheetUseCase(characterSheet)
+        saveCharacterSheetUseCase(uiState.characterSheet)
     }
 }
+
+data class CharacterSheetCreatorUiState(
+    val characterSheet: CharacterSheet = CharacterSheet(0, "Preview", "Character", 21, "Male", Date(), 150, 0, 10000.0, 0.0, 0.0, "")
+)
