@@ -1,6 +1,12 @@
 package tomasz.kopycinski.ideefixecreator2.ui.screens
 
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import tomasz.kopycinski.domain.usecase.GetListOfCharacterSheetsUseCase
+import javax.inject.Inject
 
-class CharacterSheetListViewModel : ViewModel() {
+@HiltViewModel
+class CharacterSheetListViewModel @Inject constructor(
+    private val getListOfCharacterSheetsUseCase: GetListOfCharacterSheetsUseCase
+) : ViewModel() {
 }
