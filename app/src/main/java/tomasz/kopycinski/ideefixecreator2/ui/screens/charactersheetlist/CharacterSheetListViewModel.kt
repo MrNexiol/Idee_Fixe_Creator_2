@@ -8,5 +8,4 @@ import javax.inject.Inject
 @HiltViewModel
 class CharacterSheetListViewModel @Inject constructor(
     private val getListOfCharacterSheetsUseCase: GetListOfCharacterSheetsUseCase
-) : ViewModel() {
-}
+) : ViewModel()

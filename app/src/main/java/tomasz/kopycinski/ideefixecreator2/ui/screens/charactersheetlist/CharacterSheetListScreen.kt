@@ -7,5 +7,4 @@ import androidx.hilt.navigation.compose.hiltViewModel
 fun CharacterSheetList(
     viewModel: CharacterSheetListViewModel = hiltViewModel()
 ) {
-
 }
