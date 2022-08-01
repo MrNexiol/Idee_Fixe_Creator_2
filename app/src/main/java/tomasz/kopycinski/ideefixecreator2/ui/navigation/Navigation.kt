@@ -11,7 +11,9 @@ import tomasz.kopycinski.ideefixecreator2.ui.screens.charactersheetlist.Characte
 fun Navigation(navHostController: NavHostController) {
     NavHost(navController = navHostController, startDestination = Screen.CharacterSheetList.route) {
         composable(Screen.CharacterSheetList.route) {
-            CharacterSheetList()
+            CharacterSheetList(navigateToCreator = {
+                navHostController.navigate(Screen.CharacterSheetCreator.route)
+            })
         }
         composable(Screen.CharacterSheetCreator.route) {
             CharacterSheetCreator()
