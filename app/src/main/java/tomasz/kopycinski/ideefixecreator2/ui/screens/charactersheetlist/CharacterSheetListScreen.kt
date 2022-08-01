@@ -16,14 +16,14 @@ fun CharacterSheetList(
     navigateToCreator: () -> Unit,
     viewModel: CharacterSheetListViewModel = hiltViewModel()
 ) {
-    val characterSheets by viewModel.characterSheets.collectAsState()
+    val uiState = viewModel.uiState
 
     LaunchedEffect(Any()) {
-        viewModel.collectCharacterSheets()
+        viewModel.updateUiState()
     }
 
     LazyColumn {
-        items(characterSheets) {
+        items(uiState.characterSheets) {
             CharacterSheetListItem(characterSheet = it)
         }
         item { 
