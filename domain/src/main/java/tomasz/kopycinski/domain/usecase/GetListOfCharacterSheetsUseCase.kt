@@ -4,7 +4,7 @@ import tomasz.kopycinski.domain.repository.CharacterSheetRepository
 import javax.inject.Inject
 
 class GetListOfCharacterSheetsUseCase @Inject constructor(
-//    private val repository: CharacterSheetRepository
+    private val repository: CharacterSheetRepository
 ) {
-//    suspend operator fun invoke() = repository.getListOfCharacterSheets()
+    suspend operator fun invoke() = repository.getListOfCharacterSheets()
 }
