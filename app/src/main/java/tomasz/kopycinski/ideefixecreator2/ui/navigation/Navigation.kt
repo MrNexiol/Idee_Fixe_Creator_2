@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import tomasz.kopycinski.ideefixecreator2.ui.screens.CharacterSheetList
+import tomasz.kopycinski.ideefixecreator2.ui.screens.charactersheetlist.CharacterSheetList
 
 @Composable
 fun Navigation(navHostController: NavHostController) {
