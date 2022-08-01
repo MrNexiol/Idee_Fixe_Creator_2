@@ -27,7 +27,7 @@ fun DomainCharacterSheet.toEntity(): EntityCharacterSheet {
         age,
         gender,
         dateOfBirth,
-        destinyPoints,
+        experience,
         luckPoints,
         accountMoney,
         jewelryMoney,

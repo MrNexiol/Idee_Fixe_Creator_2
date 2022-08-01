@@ -9,10 +9,14 @@ data class CharacterSheet(
     val age: Int,
     val gender: String,
     val dateOfBirth: Date,
-    var destinyPoints: Int,
+    var experience: Int,
     var luckPoints: Int,
     var accountMoney: Double,
     var jewelryMoney: Double,
     var barterMoney: Double,
     var notes: String
-)
+) {
+    fun fullName(): String = "$name $surname"
+
+    fun experiencePoints(): String = "$experience PP"
+}
