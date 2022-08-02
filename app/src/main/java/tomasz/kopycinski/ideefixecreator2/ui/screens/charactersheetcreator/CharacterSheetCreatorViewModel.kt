@@ -18,12 +18,42 @@ class CharacterSheetCreatorViewModel @Inject constructor(
 ) : ViewModel() {
 
     var uiState by mutableStateOf(CharacterSheetCreatorUiState())
+        private set
 
     fun saveCharacterSheet() = viewModelScope.launch {
-        saveCharacterSheetUseCase(uiState.characterSheet)
+//        saveCharacterSheetUseCase(uiState.characterSheet)
+    }
+
+    fun changeName(value: String) {
+        uiState = uiState.copy(name = value)
+    }
+
+    fun changeSurName(value: String) {
+        uiState = uiState.copy(surname = value)
+    }
+
+    fun changeAge(value: String) {
+        uiState = uiState.copy(age = value.toInt())
+    }
+
+    fun changeGender(value: String) {
+        uiState = uiState.copy(gender = value)
+    }
+
+    fun changeExperience(value: String) {
+        uiState = uiState.copy(experience = value.toInt())
+    }
+
+    fun changeNotes(value: String) {
+        uiState = uiState.copy(notes = value)
     }
 }
 
 data class CharacterSheetCreatorUiState(
-    val characterSheet: CharacterSheet = CharacterSheet(0, "Preview", "Character", 21, "Male", Date(), 150, 0, 10000.0, 0.0, 0.0, "")
+    val name: String = "",
+    val surname: String = "",
+    val age: Int = 0,
+    val gender: String = "",
+    val experience: Int = 150,
+    val notes: String = "",
 )

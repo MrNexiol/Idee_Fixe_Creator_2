@@ -7,6 +7,5 @@ import javax.inject.Inject
 class SaveCharacterSheetUseCase @Inject constructor(
     private val repository: CharacterSheetRepository
 ) {
-    suspend operator fun invoke(characterSheet: CharacterSheet) =
-        repository.save(characterSheet)
+    suspend operator fun invoke(characterSheet: CharacterSheet) = repository.save(characterSheet)
 }
