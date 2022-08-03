@@ -18,29 +18,35 @@ fun CharacterSheetCreator(
     Column {
         TextInput(
             value = uiState.name,
-            onValueChange = { viewModel.changeName(it) }
+            onValueChange = { viewModel.changeName(it) },
+            label = "Name"
         )
         TextInput(
             value = uiState.surname,
-            onValueChange = { viewModel.changeSurName(it) }
+            onValueChange = { viewModel.changeSurName(it) },
+            label = "Surname"
         )
         TextInput(
             value = uiState.age.toString(),
             onValueChange = { viewModel.changeAge(it) },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            label = "Age"
         )
         TextInput(
             value = uiState.gender,
-            onValueChange = { viewModel.changeGender(it) }
+            onValueChange = { viewModel.changeGender(it) },
+            label = "Gender"
         )
         TextInput(
             value = uiState.experience.toString(),
             onValueChange = { viewModel.changeExperience(it) },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            label = "Starting experience"
         )
         TextInput(
             value = uiState.notes,
-            onValueChange = { viewModel.changeNotes(it) }
+            onValueChange = { viewModel.changeNotes(it) },
+            label = "Notes"
         )
         Button(onClick = { viewModel.saveCharacterSheet() }) {
             Text(text = "Save character sheet")
