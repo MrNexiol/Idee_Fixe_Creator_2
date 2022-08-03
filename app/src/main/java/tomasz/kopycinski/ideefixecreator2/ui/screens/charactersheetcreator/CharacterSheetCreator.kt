@@ -4,10 +4,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material.Text
-import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.hilt.navigation.compose.hiltViewModel
+import tomasz.kopycinski.ideefixecreator2.ui.components.TextInput
 
 @Composable
 fun CharacterSheetCreator(
@@ -16,29 +16,29 @@ fun CharacterSheetCreator(
     val uiState = viewModel.uiState
 
     Column {
-        TextField(
+        TextInput(
             value = uiState.name,
             onValueChange = { viewModel.changeName(it) }
         )
-        TextField(
+        TextInput(
             value = uiState.surname,
             onValueChange = { viewModel.changeSurName(it) }
         )
-        TextField(
+        TextInput(
             value = uiState.age.toString(),
             onValueChange = { viewModel.changeAge(it) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
-        TextField(
+        TextInput(
             value = uiState.gender,
             onValueChange = { viewModel.changeGender(it) }
         )
-        TextField(
+        TextInput(
             value = uiState.experience.toString(),
             onValueChange = { viewModel.changeExperience(it) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
-        TextField(
+        TextInput(
             value = uiState.notes,
             onValueChange = { viewModel.changeNotes(it) }
         )
