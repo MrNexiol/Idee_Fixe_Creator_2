@@ -9,7 +9,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
+import tomasz.kopycinski.ideefixecreator2.R
 import tomasz.kopycinski.ideefixecreator2.ui.components.CharacterSheetListItem
 
 @Composable
@@ -26,7 +28,10 @@ fun CharacterSheetList(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(onClick = { navigateToCreator() }) {
-                Icon(imageVector = Icons.Filled.Add, contentDescription = "")
+                Icon(
+                    imageVector = Icons.Filled.Add,
+                    contentDescription = stringResource(id = R.string.add)
+                )
             }
         }
     ) {

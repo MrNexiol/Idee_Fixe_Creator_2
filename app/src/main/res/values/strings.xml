@@ -6,4 +6,6 @@
     <string name="gender">Gender</string>
     <string name="experience">Experience</string>
     <string name="notes">Notes</string>
+
+    <string name="add">Add character sheet</string>
 </resources>
