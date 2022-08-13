@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import tomasz.kopycinski.domain.usecase.SaveCharacterSheetUseCase
+import java.lang.NumberFormatException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -34,7 +35,7 @@ class CharacterSheetCreatorViewModel @Inject constructor(
     fun changeAge(value: String) = try {
         val newValue = value.toInt()
         uiState = uiState.copy(age = newValue)
-    } catch (e: Exception) {
+    } catch (e: NumberFormatException) {
         Log.d("ViewModel", e.toString())
     }
 
@@ -45,7 +46,7 @@ class CharacterSheetCreatorViewModel @Inject constructor(
     fun changeExperience(value: String) = try {
         val newValue = value.toInt()
         uiState = uiState.copy(experience = newValue)
-    } catch (e: Exception) {
+    } catch (e: NumberFormatException) {
         Log.d("ViewModel", e.toString())
     }
 

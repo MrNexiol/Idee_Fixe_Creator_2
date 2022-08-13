@@ -16,7 +16,7 @@ val Shapes = Shapes(
     large = RoundedCornerShape(0.dp)
 )
 
-class HalfCutCornerShape(private val cornerRadius: Float = 32f): Shape {
+class HalfCutCornerShape(private val cornerRadius: Float = 32f) : Shape {
     override fun createOutline(
         size: Size,
         layoutDirection: LayoutDirection,
@@ -34,5 +34,4 @@ class HalfCutCornerShape(private val cornerRadius: Float = 32f): Shape {
             }
         )
     }
-
 }

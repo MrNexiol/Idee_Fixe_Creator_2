@@ -6,8 +6,6 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
 import tomasz.kopycinski.ideefixecreator2.ui.components.CharacterSheetListItem
 
@@ -26,7 +24,7 @@ fun CharacterSheetList(
         items(uiState.characterSheets) {
             CharacterSheetListItem(characterSheet = it)
         }
-        item { 
+        item {
             Button(onClick = { navigateToCreator() }) {
                 Text(text = "Go to creator")
             }
