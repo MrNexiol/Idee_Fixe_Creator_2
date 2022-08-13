@@ -2,8 +2,11 @@ package tomasz.kopycinski.ideefixecreator2.ui.screens.charactersheetlist
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Button
-import androidx.compose.material.Text
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
+import androidx.compose.material.Scaffold
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -20,13 +23,16 @@ fun CharacterSheetList(
         viewModel.updateUiState()
     }
 
-    LazyColumn {
-        items(uiState.characterSheets) {
-            CharacterSheetListItem(characterSheet = it)
+    Scaffold(
+        floatingActionButton = {
+            FloatingActionButton(onClick = { navigateToCreator() }) {
+                Icon(imageVector = Icons.Filled.Add, contentDescription = "")
+            }
         }
-        item {
-            Button(onClick = { navigateToCreator() }) {
-                Text(text = "Go to creator")
+    ) {
+        LazyColumn {
+            items(uiState.characterSheets) {
+                CharacterSheetListItem(characterSheet = it)
             }
         }
     }
