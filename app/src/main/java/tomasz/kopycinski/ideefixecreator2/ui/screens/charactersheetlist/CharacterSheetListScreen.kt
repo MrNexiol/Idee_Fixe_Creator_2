@@ -21,7 +21,7 @@ fun CharacterSheetList(
 ) {
     val uiState = viewModel.uiState
 
-    LaunchedEffect(Any()) {
+    LaunchedEffect(Unit) {
         viewModel.updateUiState()
     }
 
