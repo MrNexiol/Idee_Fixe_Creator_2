@@ -37,7 +37,7 @@ fun CharacterSheetList(
     ) {
         LazyColumn {
             items(uiState.characterSheets) {
-                CharacterSheetListItem(characterSheet = it)
+                CharacterSheetListItem(characterSheet = it, onClick = {})
             }
         }
     }
