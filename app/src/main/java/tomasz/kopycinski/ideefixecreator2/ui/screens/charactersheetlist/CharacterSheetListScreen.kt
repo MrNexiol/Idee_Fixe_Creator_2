@@ -17,6 +17,7 @@ import tomasz.kopycinski.ideefixecreator2.ui.components.CharacterSheetListItem
 @Composable
 fun CharacterSheetList(
     navigateToCreator: () -> Unit,
+    navigateToDetails: (Int) -> Unit,
     viewModel: CharacterSheetListViewModel = hiltViewModel()
 ) {
     val uiState = viewModel.uiState
@@ -36,8 +37,10 @@ fun CharacterSheetList(
         }
     ) {
         LazyColumn {
-            items(uiState.characterSheets) {
-                CharacterSheetListItem(characterSheet = it, onClick = {})
+            items(uiState.characterSheets) { characterSheet ->
+                CharacterSheetListItem(
+                    characterSheet = characterSheet,
+                    onClick = { navigateToDetails(characterSheet.id) })
             }
         }
     }

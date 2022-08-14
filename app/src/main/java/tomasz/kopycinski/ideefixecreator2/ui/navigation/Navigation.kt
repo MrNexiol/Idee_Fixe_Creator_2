@@ -14,9 +14,18 @@ import tomasz.kopycinski.ideefixecreator2.ui.screens.charactersheetlist.Characte
 fun Navigation(navHostController: NavHostController) {
     NavHost(navController = navHostController, startDestination = Screen.CharacterSheetList.route) {
         composable(Screen.CharacterSheetList.route) {
-            CharacterSheetList(navigateToCreator = {
-                navHostController.navigate(Screen.CharacterSheetCreator.route)
-            })
+            CharacterSheetList(
+                navigateToCreator = {
+                    navHostController.navigate(
+                        Screen.CharacterSheetCreator.route
+                    )
+                },
+                navigateToDetails = {
+                    navHostController.navigate(
+                        Screen.CharacterSheetDetails.createRoute(it)
+                    )
+                }
+            )
         }
         composable(Screen.CharacterSheetCreator.route) {
             CharacterSheetCreator()
@@ -25,7 +34,9 @@ fun Navigation(navHostController: NavHostController) {
             route = Screen.CharacterSheetDetails.route,
             arguments = listOf(navArgument("id") { type = NavType.IntType })
         ) { backStackEntry ->
-            CharacterSheetDetailsScreen(characterSheetId = 2)
+            val id = backStackEntry.arguments?.getInt("id")
+            requireNotNull(id) { "Id parameter not supplied" }
+            CharacterSheetDetailsScreen(characterSheetId = id)
         }
     }
 }
